@@ -4,79 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionando...</title>
+    <meta http-equiv="refresh" content="3;url=https://wa.me/5598986291640?text=Vim%20garantir%20minha%20tatuagem%20gr%C3%A1tis%20da%20promo%C3%A7%C3%A3o!">
+    
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #000; /* Fundo preto para combinar com estética de tattoo */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
             color: #fff;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
             text-align: center;
         }
-
         .container {
             padding: 20px;
         }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            padding: 18px 30px;
-            border-radius: 50px;
+        .loader {
+            border: 4px solid #333;
+            border-top: 4px solid #25d366; /* Cor do WhatsApp */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #25d366;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-
-        .btn-whatsapp:active {
-            transform: scale(0.95);
-        }
-
-        .loader {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #888;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Quase lá!</h2>
-        <p>Clique no botão abaixo para garantir sua tatuagem grátis no WhatsApp.</p>
-        
-        <a href="https://wa.me/5598986291640?text=Vim%20garantir%20minha%20tatuagem%20gr%C3%A1tis!" class="btn-whatsapp">
-            QUERO MINHA TATTOO GRÁTIS!
-        </a>
-
-        <p class="loader" id="status">Você será redirecionado automaticamente em <span id="seconds">5</span>s...</p>
+        <div class="loader"></div>
+        <h2>Aguarde um instante...</h2>
+        <p>Você está sendo redirecionado para garantir sua <strong>tatuagem grátis</strong>!</p>
+        <p><small>Se não for redirecionado em 3 segundos, <a href="https://wa.me/5598986291640?text=Vim%20garantir%20minha%20tatuagem%20gr%C3%A1tis%20da%20promo%C3%A7%C3%A3o!">clique aqui</a>.</small></p>
     </div>
-
-    <script>
-        const whatsappUrl = "https://wa.me/5598986291640?text=Vim%20garantir%20minha%20tatuagem%20gr%C3%A1tis!";
-        let seconds = 5;
-        const countdownElement = document.getElementById('seconds');
-
-        // Contador regressivo
-        const timer = setInterval(() => {
-            seconds--;
-            countdownElement.textContent = seconds;
-            if (seconds <= 0) {
-                clearInterval(timer);
-                window.location.href = whatsappUrl;
-            }
-        }, 1000);
-
-        // Redirecionamento de segurança imediato (opcional, remova se quiser apenas o botão)
-        // setTimeout(() => { window.location.href = whatsappUrl; }, 5000);
-    </script>
 
 </body>
 </html>
